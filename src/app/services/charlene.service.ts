@@ -62,5 +62,11 @@ deleteAnnonce(id:number) : Observable<Annonce> {
   catchError(this.handleError));
 }
 
+mofifMessage(planet: Annonce) {
+  return this.http.put<Annonce>(this.apiURL + '/' + planet.id ,planet, this.httpOptions).pipe(retry(1),
+  catchError(this.handleError)
+  );
+  }
+
 
 }

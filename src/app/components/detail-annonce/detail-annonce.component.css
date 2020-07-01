@@ -1,0 +1,18 @@
+img {
+  width: 800px;
+  height: 800px;
+  opacity: 0.8
+  ;
+}
+
+div{
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  background-image:url(https://blog.hipper.com/fr/wp-content/uploads/sites/2/2018/01/le-langage-des-fleurs-1280x720.jpg) ;
+}
+
+h1,h2 {
+  color: red;
+}

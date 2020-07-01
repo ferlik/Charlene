@@ -7,6 +7,7 @@
 <img src="{{annonces.image}}" >
 
 <a class="btn btn-danger" (click)="deleteAnnonce(annonces.id)">supprime</a>
+<a class="btn btn-danger"  [routerLink]="['/modif/message',annonces.id]">Editer</a>
 
 </div>
 
