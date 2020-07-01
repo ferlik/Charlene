@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CharleneService } from 'src/app/services/charlene.service';
 import { ToastrService } from 'ngx-toastr';
 import { Annonce } from 'src/app/models/objet';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-modif-annonce',
@@ -11,11 +11,17 @@ import { Router } from '@angular/router';
 })
 export class ModifAnnonceComponent implements OnInit {
 
-  constructor(private service : CharleneService,private toastr: ToastrService,private router:Router) { }
+  constructor(private service : CharleneService,private toastr: ToastrService,private router:Router, private activatedRoute: ActivatedRoute) { }
   annonce : Annonce;
   isLoading: boolean;
 
   ngOnInit(): void {
+    this.isLoading = true;
+    this.service.getOneAnnonce(parseInt(this.activatedRoute.snapshot.paramMap.get('id'))).subscribe((data: Annonce) => {
+      this.annonce = data;
+      this.isLoading = false;
+    });
+
   }
 
   modifMessage(): void {

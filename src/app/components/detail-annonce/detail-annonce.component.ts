@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CharleneService } from 'src/app/services/charlene.service';
 import { Annonce } from 'src/app/models/objet';
 import { ToastrService } from 'ngx-toastr';
@@ -14,7 +14,7 @@ export class DetailAnnonceComponent implements OnInit {
   annonces: Annonce;
   annonce: Annonce[];
 
-  constructor(private route: ActivatedRoute, private Service: CharleneService, private toto: ToastrService ) { }
+  constructor(private route: ActivatedRoute, private Service: CharleneService, private toto: ToastrService, private router: Router ) { }
 
   isLoading: boolean;
 
@@ -33,6 +33,7 @@ export class DetailAnnonceComponent implements OnInit {
     this.Service.getAnnonce().subscribe((data: Annonce[]) => {
       this.annonce = data;
       this.isLoading = false;
+      this.router.navigate(['/home']);
       this.toto.error("Le message à été supprimée !"); //on affiche la notification
     });
   })
