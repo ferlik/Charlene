@@ -1,0 +1,25 @@
+{
+  "charlene-message": [
+    {
+      "id": 1,
+      "titre": "MERCI",
+      "description": "Ceci est une photo linkedin",
+      "image": "https://transfert-exam.s3.eu-central-1.amazonaws.com/charlene.jpg",
+      "dateAjout": "2012-04-23T18:25:43.511Z"
+    },
+    {
+      "id": 3,
+      "titre": "fddf",
+      "description": "feeffse",
+      "image": "dqfsf",
+      "dateAjout": "2020-07-14"
+    },
+    {
+      "id": 4,
+      "titre": "coucou",
+      "description": "Vraiment cool",
+      "image": "https://blog.interflora.fr/wp-content/uploads/2017/08/Langage-des-fleurs-amour-2.jpg",
+      "dateAjout": "2020-07-17"
+    }
+  ]
+}

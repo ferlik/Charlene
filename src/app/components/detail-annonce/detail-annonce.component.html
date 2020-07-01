@@ -1,0 +1,15 @@
+<div *ngIf="!isLoading">
+  <h1>{{annonces.titre}}</h1>
+<h2>{{annonces.description}}</h2>
+
+<h2>{{annonces.dateAjout}}</h2>
+
+<img src="{{annonces.image}}" >
+
+<a class="btn btn-danger" (click)="deleteAnnonce(annonces.id)">supprime</a>
+
+</div>
+
+<div *ngIf="isLoading">
+  Chargement en cours .....
+</div>

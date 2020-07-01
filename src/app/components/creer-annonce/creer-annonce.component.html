@@ -1,0 +1,29 @@
+<h1>Ajouter un message</h1>
+
+
+<div *ngIf="!isLoading">
+
+<form #planetForm="ngForm" (ngSubmit)="ngSubmit()">
+
+  <label for="nom"> Hey Charlène</label>
+  <input type="text" class="form-control" name="nom" id="nom" required [(ngModel)]="annonce.titre">
+
+  <label for="id"> quelques petits mots</label>
+  <input type="text" class="form-control" name="nombre" id="id" required [(ngModel)]="annonce.description">
+
+
+  <label for="id"> date </label>
+  <input type="date" class="form-control" name="nbKmTerre" id="nbKmTerre" required [(ngModel)]="annonce.dateAjout">
+
+  <label for="id">Elle est trop belle</label>
+  <input type="string" class="form-control" name="image" id="image" required [(ngModel)]="annonce.image">
+
+  <input class="btn" [disabled]="!planetForm.valid" type="submit" value="Envoyer">
+
+</form>
+</div>
+
+<div *ngIf="isLoading">
+  <p>Traitement des données.....</p>
+</div>
+
